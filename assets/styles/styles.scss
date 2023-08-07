@@ -1,0 +1,25 @@
+@font-face {
+  font-family: "Arsenal-Regular";
+  src: url("/public/fonts/Arsenal-Regular.ttf");
+}
+@font-face {
+  font-family: "Arsenal-Bold";
+  src: url("/public/fonts/Arsenal-Bold.ttf");
+}
+@font-face {
+  font-family: "Arsenal-Italic";
+  src: url("/public/fonts/Arsenal-Italic.ttf");
+}
+@font-face {
+  font-family: "Arsenal-BoldItalic";
+  src: url("/public/fonts/Arsenal-BoldItalic.ttf");
+}
+
+$main-font-reg: "Arsenal-Regular";
+$main-font-bold: "Arsenal-Bold";
+$main-font-italic: "Arsenal-Italic";
+$main-font-boldItalic: "Arsenal-BoldItalic";
+
+h1 {
+  font-family: $main-font-bold;
+}

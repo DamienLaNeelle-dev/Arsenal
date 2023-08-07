@@ -1,0 +1,19 @@
+@import "~bootstrap/scss/bootstrap";
+
+.navbar-brand img {
+  width: 100px;
+}
+
+.container-fluid {
+  background-color: #db0007;
+}
+
+.navbar-nav .nav-item .nav-link {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.navbar.navbar-expand-lg {
+  padding-top: 0;
+  padding-bottom: 0;
+}

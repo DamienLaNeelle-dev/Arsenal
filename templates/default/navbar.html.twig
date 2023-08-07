@@ -1,22 +1,37 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"><img src="{{ asset('images/logo.png') }}" alt=""></a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="#">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Features</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Pricing</a>
-        </li>
-      </ul>
-    </div>
-    .
-  </div>
+	<div class="container-fluid">
+		<div class="container d-flex">
+			<a class="navbar-brand" href="#"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" aria-current="page" href="#">Équipes</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">News</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Résultats</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="#">Saisons</a>
+					</li>
+				</ul>
+			</div>
+			<div class="sponsors d-flex align-items-center">
+				<div class="adidas">
+					<img src="{{ asset('images/adidas2023.webp') }}" alt="">
+				</div>
+				<div class="emirates">
+					<img src="{{ asset('images/emirates.png') }}" alt="">
+				</div>
+				<div class="rwanda">
+					<img src="{{ asset('images/visit-rwanda.png') }}" alt="">
+				</div>
+			</div>
+		</div>
+	</div>
 </nav>

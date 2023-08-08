@@ -1074,7 +1074,7 @@
   "resolved" "https://registry.npmjs.org/@sinclair/typebox/-/typebox-0.27.8.tgz"
   "version" "0.27.8"
 
-"@symfony/webpack-encore@^4.0.0":
+"@symfony/webpack-encore@^4.4.0":
   "integrity" "sha512-p3n2Z16sGV6odZ3ihIU+gupYc55KfrfCt62+Gppe8MUo6QuT5Bk2cXXjR4Hb89KvCRDHnjYEWVfnewRsfE8TRQ=="
   "resolved" "https://registry.npmjs.org/@symfony/webpack-encore/-/webpack-encore-4.4.0.tgz"
   "version" "4.4.0"

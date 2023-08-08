@@ -28,6 +28,14 @@ h1 {
   font-family: $main-font-reg;
 }
 
+.dropdown button {
+  font-family: $main-font-reg;
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  font-family: $main-font-reg;
+}
+
 body {
   margin: 0;
 }

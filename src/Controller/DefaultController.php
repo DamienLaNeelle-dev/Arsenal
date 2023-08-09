@@ -44,4 +44,14 @@ class DefaultController extends AbstractController
 
         return new Response($jsonContent);
     }
+
+    #[Route('/team1', name: 'first_team')]
+    public function team1(PlayersRepository $players): Response{
+
+        $playerTeam1 = $players->findBy(['equipe' => '1']);
+
+        return $this->render('default/team1.html.twig', [
+            'playerTeam1' => $playerTeam1, 
+        ]);
+    }
 }

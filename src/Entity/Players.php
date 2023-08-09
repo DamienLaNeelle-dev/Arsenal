@@ -20,8 +20,8 @@ class Players
     #[ORM\Column(length: 255)]
     private ?string $nom = null;
 
-    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
-    private ?\DateTimeInterface $age = null;
+    #[ORM\Column(type: Types::DATE_MUTABLE)]
+    private ?\DateTimeInterface $birthDate = null;
 
     #[ORM\Column(length: 255)]
     private ?string $nationalite = null;
@@ -37,6 +37,8 @@ class Players
 
     #[ORM\Column(length: 255)]
     private ?string $photo = null;
+
+    private ?int $age = null;
 
     public function getId(): ?int
     {
@@ -67,14 +69,14 @@ class Players
         return $this;
     }
 
-    public function getAge(): ?\DateTimeInterface
+    public function getBirthDate(): ?\DateTimeInterface
     {
-        return $this->age;
+        return $this->birthDate;
     }
 
-    public function setAge(\DateTimeInterface $age): static
+    public function setBirthDate(\DateTimeInterface $birthDate): static
     {
-        $this->age = $age;
+        $this->birthDate = $birthDate;
 
         return $this;
     }
@@ -135,6 +137,18 @@ class Players
     public function setPhoto(string $photo): static
     {
         $this->photo = $photo;
+
+        return $this;
+    }
+
+    public function getAge(): ?int
+    {
+        return $this->age;
+    }
+
+    public function setAge(int $age): self
+    {
+        $this->age = $age;
 
         return $this;
     }

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Repository\PlayersRepository;
+use App\Service\PlayersService;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -46,9 +47,16 @@ class DefaultController extends AbstractController
     }
 
     #[Route('/team1', name: 'first_team')]
-    public function team1(PlayersRepository $players): Response{
+    public function team1(PlayersRepository $players, PlayersService $playersService): Response{
 
         $playerTeam1 = $players->findBy(['equipe' => '1']);
+
+        foreach($playerTeam1 as $player){
+
+            $age = $playersService->calculateAge($player->getBirthDate());
+
+            $player->setAge($age);
+        }
 
         return $this->render('default/team1.html.twig', [
             'playerTeam1' => $playerTeam1, 

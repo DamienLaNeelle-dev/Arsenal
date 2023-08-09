@@ -8,7 +8,23 @@
 
 	{% include "./default/navbar.html.twig" %}
 
-	<h1 class="mb-5">Équipe 1</h1>
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="my-5">
+				<h1 class="team1_title">Équipe 1</h1>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="my-5 mx-5">
+				<h1 class="team1_title"></h1>
+			</div>
+		</div>
+		<div class="col-lg-4">
+			<div class="my-5 mx-5">
+				<h1 class="team1_title"></h1>
+			</div>
+		</div>
+	</div>
 
 	<div class="row">
 		{% for player in playerTeam1 %}
@@ -18,7 +34,8 @@
 					<div class="card-body">
 						<h5>{{ player.prenom }}</h5>
 						<h3>{{ player.nom }}</h3>
-						<p>Âge : {{ player.age }}</p>
+						<p>Âge :
+							{{ player.age }}</p>
 						<p>Nationalité :
 							{{ player.nationalite }}</p>
 						<p>Poste :

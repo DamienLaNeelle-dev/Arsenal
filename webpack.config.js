@@ -25,6 +25,7 @@ Encore
   .addEntry("styles", "./assets/styles/styles.scss")
   .addEntry("main_page_styles", "./assets/styles/main_page.scss")
   .addEntry("navbar_styles", "./assets/styles/navbar.scss")
+  .addEntry("team1_styles", "./assets/styles/team1.scss")
 
   // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
   .splitEntryChunks()

@@ -21,11 +21,13 @@ Encore
    * and one CSS file (e.g. app.css) if your JavaScript imports CSS.
    */
   .addEntry("app", "./assets/app.js")
+  .addEntry("input_teams", "./assets/components/input_teams.js")
 
   .addEntry("styles", "./assets/styles/styles.scss")
   .addEntry("main_page_styles", "./assets/styles/main_page.scss")
   .addEntry("navbar_styles", "./assets/styles/navbar.scss")
   .addEntry("team1_styles", "./assets/styles/team1.scss")
+  .addEntry("input_teams_styles", "./assets/styles/input_teams.scss")
 
   // When enabled, Webpack "splits" your files into smaller pieces for greater optimization.
   .splitEntryChunks()

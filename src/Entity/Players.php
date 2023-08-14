@@ -40,6 +40,9 @@ class Players
 
     private ?int $age = null;
 
+    #[ORM\Column(length: 255)]
+    private ?string $position = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -149,6 +152,18 @@ class Players
     public function setAge(int $age): self
     {
         $this->age = $age;
+
+        return $this;
+    }
+
+    public function getPosition(): ?string
+    {
+        return $this->position;
+    }
+
+    public function setPosition(string $position): static
+    {
+        $this->position = $position;
 
         return $this;
     }

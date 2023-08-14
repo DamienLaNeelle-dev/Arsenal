@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
 	<div class="container-fluid">
 		<div class="container d-flex">
-			<a class="navbar-brand mt-3" href="{{ path('main_page') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
+			<a class="navbar-brand" href="{{ path('main_page') }}"><img src="{{ asset('images/logo.png') }}" alt=""></a>
 			<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
@@ -17,10 +17,10 @@
 									<a class="dropdown-item" href="{{ path('first_team') }}">Équipe masculine</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="#">Équipe féminine</a>
+									<a class="dropdown-item" href="{{ path('women_team') }}">Équipe féminine</a>
 								</li>
 								<li>
-									<a class="dropdown-item" href="#">Équipe U23</a>
+									<a class="dropdown-item" href="{{ path('U23_team') }}">Équipe U23</a>
 								</li>
 							</ul>
 						</div>

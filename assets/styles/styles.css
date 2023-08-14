@@ -1,0 +1,56 @@
+@font-face {
+  font-family: "Arsenal-Regular";
+  src: url("/public/fonts/Arsenal-Regular.ttf");
+}
+@font-face {
+  font-family: "Arsenal-Bold";
+  src: url("/public/fonts/Arsenal-Bold.ttf");
+}
+@font-face {
+  font-family: "Arsenal-Italic";
+  src: url("/public/fonts/Arsenal-Italic.ttf");
+}
+@font-face {
+  font-family: "Arsenal-BoldItalic";
+  src: url("/public/fonts/Arsenal-BoldItalic.ttf");
+}
+body {
+  margin: 0;
+}
+
+h1 {
+  font-family: "Arsenal-Bold";
+}
+
+h2 {
+  font-family: "Arsenal-Bold";
+}
+
+h3 {
+  font-family: "Arsenal-Bold";
+}
+
+h5 {
+  font-family: "Arsenal-Bold";
+}
+
+.nav-link {
+  font-family: "Arsenal-Regular";
+}
+
+p {
+  font-family: "Arsenal-Regular";
+}
+
+.dropdown button {
+  font-family: "Arsenal-Regular";
+}
+
+.navbar-nav .dropdown-menu .dropdown-item {
+  font-family: "Arsenal-Regular";
+}
+
+.input_teams button,
+.input_teams .dropdown-menu .dropdown-item {
+  font-family: "Arsenal-Regular";
+}/*# sourceMappingURL=styles.css.map */

@@ -8,47 +8,108 @@
 
 	{% include "./default/navbar.html.twig" %}
 
-	<div class="row">
-		<div class="col-lg-4">
-			<div class="my-5">
-				<h1 class="team1_title">Équipe 1</h1>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<div class="my-5 mx-5">
-				<h1 class="team1_title"></h1>
-			</div>
-		</div>
-		<div class="col-lg-4">
-			<div class="my-5 mx-5">
-				<h1 class="team1_title"></h1>
-			</div>
-		</div>
+
+	<div class="my-5">
+		<h1 class="team1_title">Équipe 1</h1>
 	</div>
+
+	<h2 class="my-5 position_title">Gardiens</h2>
 
 	<div class="row">
 		{% for player in playerTeam1 %}
-			<div class="col-lg-4">
-				<div class="card mx-auto mb-5" style="width: 18rem;">
-					<img src="{{ asset(player.photo) }}" class="card-img-top" alt="...">
-					<div class="card-body">
-						<h5>{{ player.prenom }}</h5>
-						<h3>{{ player.nom }}</h3>
-						<p>Âge :
-							{{ player.age }}</p>
-						<p>Nationalité :
-							{{ player.nationalite }}</p>
-						<p>Poste :
-							{{ player.poste }}</p>
-						<p>Numéro :
-							{{ player.numero }}</p>
+			{% if player.position == 'gardien' %}
+				<div class="col-lg-4">
+					<div class="card mx-auto mb-5" style="width: 18rem;">
+						<img src="{{ asset(player.photo) }}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5>{{ player.prenom }}</h5>
+							<h3>{{ player.nom }}</h3>
+							<p>Âge :
+								{{ player.age }}</p>
+							<p>Nationalité :
+								{{ player.nationalite }}</p>
+							<p>Poste :
+								{{ player.poste }}</p>
+							<p>Numéro :
+								{{ player.numero }}</p>
+						</div>
 					</div>
 				</div>
-			</div>
-			{% if loop.index % 3 == 0 %}
-			</div>
-			<div class="row">
 			{% endif %}
 		{% endfor %}
-	</div>
-{% endblock %}
+
+		<h2 class="my-5 position_title">Défenseurs</h2>
+		<div class="row">
+			{% for player in playerTeam1 %}
+				{% if player.position == 'defenseur' %}
+					<div class="col-lg-4">
+						<div class="card mx-auto mb-5" style="width: 18rem;">
+							<img src="{{ asset(player.photo) }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5>{{ player.prenom }}</h5>
+								<h3>{{ player.nom }}</h3>
+								<p>Âge :
+									{{ player.age }}</p>
+								<p>Nationalité :
+									{{ player.nationalite }}</p>
+								<p>Poste :
+									{{ player.poste }}</p>
+								<p>Numéro :
+									{{ player.numero }}</p>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+		<h2 class="my-5 position_title">Milieux</h2>
+		<div class="row">
+			{% for player in playerTeam1 %}
+				{% if player.position == 'milieu' %}
+					<div class="col-lg-4">
+						<div class="card mx-auto mb-5" style="width: 18rem;">
+							<img src="{{ asset(player.photo) }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5>{{ player.prenom }}</h5>
+								<h3>{{ player.nom }}</h3>
+								<p>Âge :
+									{{ player.age }}</p>
+								<p>Nationalité :
+									{{ player.nationalite }}</p>
+								<p>Poste :
+									{{ player.poste }}</p>
+								<p>Numéro :
+									{{ player.numero }}</p>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+		<h2 class="my-5 position_title">Attaquants</h2>
+		<div class="row">
+			{% for player in playerTeam1 %}
+				{% if player.position == 'attaquant' %}
+					<div class="col-lg-4">
+						<div class="card mx-auto mb-5" style="width: 18rem;">
+							<img src="{{ asset(player.photo) }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5>{{ player.prenom }}</h5>
+								<h3>{{ player.nom }}</h3>
+								<p>Âge :
+									{{ player.age }}</p>
+								<p>Nationalité :
+									{{ player.nationalite }}</p>
+								<p>Poste :
+									{{ player.poste }}</p>
+								<p>Numéro :
+									{{ player.numero }}</p>
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+	{% endblock %}

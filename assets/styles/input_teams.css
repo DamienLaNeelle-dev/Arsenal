@@ -1,0 +1,31 @@
+.input_teams {
+  margin-left: 3.5vw;
+}
+
+.input_teams button {
+  padding: 2vh 2vw;
+  background-color: transparent;
+  color: #db0007;
+  border: 3px solid #db0007;
+  font-size: 1.2rem;
+}
+
+.input_teams button.active,
+.input_teams button.active:focus,
+.input_teams button.active:active,
+.input_teams button.show,
+.input_teams button:active,
+.input_teams button:hover {
+  background-color: #db0007 !important;
+  color: #fff;
+  border: 3px solid #db0007;
+}
+
+.input_teams .dropdown-item {
+  color: #db0007;
+}
+
+.input_teams .dropdown-item:hover {
+  color: #fff;
+  background-color: #db0007;
+}/*# sourceMappingURL=input_teams.css.map */

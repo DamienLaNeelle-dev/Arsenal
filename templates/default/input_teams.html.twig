@@ -1,0 +1,32 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Arsenal FC
+{% endblock %}
+
+{% block body %}
+<div class="dropdown input_teams">
+	<button class="btn btn-secondary dropdown-toggle" type="button" id="teamDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		{% if app.request.get('_route') == 'first_team' %}
+			Équipe masculine
+		{% elseif app.request.get('_route') == 'women_team' %}
+			Équipe féminine
+		{% else %}
+			Équipe U23
+		{% endif %}
+	</button>
+	<div class="dropdown-menu" aria-labelledby="teamDropdown">
+		{% if app.request.get('_route') == 'first_team' %}
+			<a class="dropdown-item" href="{{ path('women_team') }}" data-team="women_team">Équipe féminine</a>
+			<a class="dropdown-item" href="{{ path('U23_team') }}" data-team="U23_team">Équipe U23</a>
+		{% elseif app.request.get('_route') == 'women_team' %}
+			<a class="dropdown-item" href="{{ path('first_team') }}" data-team="first_team">Équipe masculine</a>
+			<a class="dropdown-item" href="{{ path('U23_team') }}" data-team="U23_team">Équipe U23</a>
+        {% else %}
+            <a class="dropdown-item" href="{{ path('first_team') }}" data-team="first_team">Équipe masculine</a>
+            <a class="dropdown-item" href="{{ path('women_team') }}" data-team="women_team">Équipe féminine</a>
+		{% endif %}
+	</div>
+</div>
+
+
+{% endblock %}

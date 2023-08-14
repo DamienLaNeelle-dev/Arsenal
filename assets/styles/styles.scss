@@ -20,6 +20,10 @@ $main-font-bold: "Arsenal-Bold";
 $main-font-italic: "Arsenal-Italic";
 $main-font-boldItalic: "Arsenal-BoldItalic";
 
+body {
+  margin: 0;
+}
+
 h1 {
   font-family: $main-font-bold;
 }
@@ -52,6 +56,7 @@ p {
   font-family: $main-font-reg;
 }
 
-body {
-  margin: 0;
+.input_teams button,
+.input_teams .dropdown-menu .dropdown-item {
+  font-family: $main-font-reg;
 }

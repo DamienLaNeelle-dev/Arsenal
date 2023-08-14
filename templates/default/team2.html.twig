@@ -12,10 +12,10 @@
 		{% include "./default/input_teams.html.twig" %}
 	</div>
 
-	<h2 class="my-5 position_title">Gardiens</h2>
+	<h2 class="my-5 position_title">Gardiennes</h2>
 
 	<div class="row">
-		{% for player in playerTeam1 %}
+		{% for player in playerTeam2 %}
 			{% if player.position == 'gardien' %}
 				<div class="col-lg-4">
 					<div class="card mx-auto mb-5" style="width: 18rem;">
@@ -37,9 +37,9 @@
 			{% endif %}
 		{% endfor %}
 
-		<h2 class="my-5 position_title">Défenseurs</h2>
+		<h2 class="my-5 position_title">Défenseuses</h2>
 		<div class="row">
-			{% for player in playerTeam1 %}
+			{% for player in playerTeam2 %}
 				{% if player.position == 'defenseur' %}
 					<div class="col-lg-4">
 						<div class="card mx-auto mb-5" style="width: 18rem;">
@@ -64,7 +64,7 @@
 
 		<h2 class="my-5 position_title">Milieux</h2>
 		<div class="row">
-			{% for player in playerTeam1 %}
+			{% for player in playerTeam2 %}
 				{% if player.position == 'milieu' %}
 					<div class="col-lg-4">
 						<div class="card mx-auto mb-5" style="width: 18rem;">
@@ -87,9 +87,9 @@
 			{% endfor %}
 		</div>
 
-		<h2 class="my-5 position_title">Attaquants</h2>
+		<h2 class="my-5 position_title">Attaquantes</h2>
 		<div class="row">
-			{% for player in playerTeam1 %}
+			{% for player in playerTeam2 %}
 				{% if player.position == 'attaquant' %}
 					<div class="col-lg-4">
 						<div class="card mx-auto mb-5" style="width: 18rem;">

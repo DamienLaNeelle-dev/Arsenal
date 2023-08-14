@@ -62,4 +62,38 @@ class DefaultController extends AbstractController
             'playerTeam1' => $playerTeam1, 
         ]);
     }
+
+    #[Route('/team2', name: 'women_team')]
+    public function team2(PlayersRepository $players, PlayersService $playersService): Response{
+
+        $playerTeam2 = $players->findBy(['equipe' => '2']);
+
+        foreach($playerTeam2 as $player){
+
+            $age = $playersService->calculateAge($player->getBirthDate());
+
+            $player->setAge($age);
+        }
+
+        return $this->render('default/team2.html.twig', [
+            'playerTeam2' => $playerTeam2, 
+        ]);
+    }
+
+    #[Route('/team3', name: 'U23_team')]
+    public function team3(PlayersRepository $players, PlayersService $playersService): Response{
+
+        $playerTeam3 = $players->findBy(['equipe' => '3']);
+
+        foreach($playerTeam3 as $player){
+
+            $age = $playersService->calculateAge($player->getBirthDate());
+
+            $player->setAge($age);
+        }
+
+        return $this->render('default/team3.html.twig', [
+            'playerTeam3' => $playerTeam3, 
+        ]);
+    }
 }

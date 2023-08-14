@@ -7,12 +7,15 @@
         <link rel="stylesheet" href="{{ asset('build/styles.css') }}">
         <link rel="stylesheet" href="{{ asset('build/navbar_styles.css') }}">
         <link rel="stylesheet" href="{{ asset('build/team1_styles.css') }}">
+        <link rel="stylesheet" href="{{ asset('build/input_teams_styles.css') }}">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
+
+            <script src="{{ asset('components/input_teams.js') }}"></script>
         {% endblock %}
     </head>
     <body>

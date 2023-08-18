@@ -1,0 +1,76 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Arsenal FC | Staff{% endblock %}
+
+{% block body %}
+{% include "./default/navbar.html.twig" %}
+
+	<h2 class="my-5 position_title">Entraineurs</h2>
+
+	<div class="row">
+		{% for staff in staff_members %}
+			{% if staff.position == 'entraineur' %}
+				<div class="col-lg-4">
+					<div class="card mx-auto mb-5" style="width: 18rem;">
+						<img src="{{ asset(staff.photo) }}" class="card-img-top" alt="...">
+						<div class="card-body">
+							<h5>{{ staff.prenom }}</h5>
+							<h3>{{ staff.nom }}</h3>
+							<p>Âge :
+								{{ staff.age }}</p>
+							<p>Rôle :
+								{{ staff.role }}</p>
+							{# <p>Au club depuis : #}
+								{# {{ player.numero }} + " ans"</p> #}
+						</div>
+					</div>
+				</div>
+			{% endif %}
+		{% endfor %}
+
+		<h2 class="my-5 position_title">Management et direction</h2>
+		<div class="row">
+			{% for staff in staff_members %}
+				{% if staff.position == 'management' %}
+					<div class="col-lg-4">
+						<div class="card mx-auto mb-5" style="width: 18rem;">
+							<img src="{{ asset(staff.photo) }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5>{{ staff.prenom }}</h5>
+							<h3>{{ staff.nom }}</h3>
+							<p>Âge :
+								{{ staff.age }}</p>
+							<p>Rôle :
+								{{ staff.role }}</p>
+							{# <p>Au club depuis : #}
+								{# {{ player.numero }} + " ans"</p> #}
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %}
+		</div>
+
+		<h2 class="my-5 position_title">Médecins</h2>
+		<div class="row">
+			{% for staff in staff_members %}
+				{% if staff.position == 'medical' %}
+					<div class="col-lg-4">
+						<div class="card mx-auto mb-5" style="width: 18rem;">
+							<img src="{{ asset(staff.photo) }}" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5>{{ staff.prenom }}</h5>
+							<h3>{{ staff.nom }}</h3>
+							<p>Âge :
+								{{ staff.age }}</p>
+							<p>Rôle :
+								{{ staff.role }}</p>
+							{# <p>Au club depuis : #}
+								{# {{ player.numero }} + " ans"</p> #}
+							</div>
+						</div>
+					</div>
+				{% endif %}
+			{% endfor %} 
+		</div> 
+{% endblock %}

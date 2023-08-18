@@ -2,8 +2,10 @@
 
 namespace App\Controller;
 
-use App\Repository\PlayersRepository;
 use App\Service\PlayersService;
+use App\Repository\StaffRepository;
+use App\Repository\PlayersRepository;
+use App\Service\StaffService;
 use Symfony\Component\Serializer\Serializer;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -37,6 +39,29 @@ class DefaultController extends AbstractController
 
         $serializer = new Serializer([$normalizer], [$encoder]);
         $jsonContent = ($serializer->serialize($players, 'json'));
+
+        $response = new Response;
+
+        $response->headers->set('Content-Type', 'application/json');
+        $response->headers->set('Access-Control-Allow-Origin', '*');
+
+        return new Response($jsonContent);
+    }
+
+    #[Route('/staff_members', name: 'staff_members')]
+    public function staff_members(StaffRepository $staffRepository): Response{
+        $staff = $staffRepository->findAll();
+
+        $encoder = new JsonEncoder();
+        $defaultContent = [
+            AbstractNormalizer::CIRCULAR_REFERENCE_HANDLER => function ($object, $format, $context){
+                return $object->getNom();
+            },
+        ];
+        $normalizer = new ObjectNormalizer(null, null, null, null, null, null, $defaultContent);
+
+        $serializer = new Serializer([$normalizer], [$encoder]);
+        $jsonContent = ($serializer->serialize($staff, 'json'));
 
         $response = new Response;
 
@@ -94,6 +119,24 @@ class DefaultController extends AbstractController
 
         return $this->render('default/team3.html.twig', [
             'playerTeam3' => $playerTeam3, 
+        ]);
+    }
+
+    #[Route('/staff', name: 'staff')]
+    public function staff(StaffRepository $staff, StaffService $staffService): Response{
+        $staff_members = $staff->findAll();
+
+        foreach($staff_members as $staff){
+
+            $age = $staffService->calculateAge($staff->getBirthDate());
+            // $seniority = $staffService->calculateSeniority($staff->getAuClubDepuis());
+
+            $staff->setAge($age);
+            // $staff->setAuClubDepuis($seniority);
+        }
+        
+        return $this->render('default/staff.html.twig', [
+            'staff_members' => $staff_members,
         ]);
     }
 }

@@ -22,7 +22,6 @@ Encore
    */
   .addEntry("app", "./assets/app.js")
   .addEntry("input_teams", "./assets/components/input_teams.js")
-  .addEntry("news", "./assets/components/news.js")
 
   .addEntry("styles", "./assets/styles/styles.scss")
   .addEntry("main_page_styles", "./assets/styles/main_page.scss")

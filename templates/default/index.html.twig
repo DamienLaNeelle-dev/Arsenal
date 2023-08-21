@@ -18,15 +18,3 @@
 	</div>
 
 {% endblock %}
-
-{% block javascripts %}
-	{{ parent() }}
-	<script src="{{ asset('js/api.js') }}" defer></script>
-	<script>
-		// Appel de la fonction fetchNews depuis le fichier api.js
-fetchNews().then(data => {
-console.log(data);
-// Utilisez les données de l'API comme vous le souhaitez
-});
-	</script>
-{% endblock %}

@@ -1,8 +1,32 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Arsenal FC | Accueil{% endblock %}
+{% block title %}Arsenal FC | Accueil
+{% endblock %}
 
 {% block body %}
-{% include "./default/navbar.html.twig" %}
-<h1>Bienvenue sur le site officiellement non officel du Arsenal FC</h1>
+	{% include "./default/navbar.html.twig" %}
+
+	<div class="banner">
+		<div class="banner_image"></div>
+		<div class="banner_title">
+			<h1>Bienvenue sur le site
+				<br>
+				officiellement non officel
+				<br>
+				du Arsenal FC</h1>
+		</div>
+	</div>
+
+{% endblock %}
+
+{% block javascripts %}
+	{{ parent() }}
+	<script src="{{ asset('js/api.js') }}" defer></script>
+	<script>
+		// Appel de la fonction fetchNews depuis le fichier api.js
+fetchNews().then(data => {
+console.log(data);
+// Utilisez les données de l'API comme vous le souhaitez
+});
+	</script>
 {% endblock %}
